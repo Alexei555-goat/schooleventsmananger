@@ -1,0 +1,7 @@
+components:
+- layout_properties: {grid_position: 'TTZBWN,NYJRMV'}
+  name: label_1
+  properties: {text: Event}
+  type: Label
+container: {type: ColumnPanel}
+is_package: true

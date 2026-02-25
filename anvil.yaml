@@ -1,4 +1,22 @@
 allow_embedding: false
+db_schema:
+  files:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      client_hidden: false
+      name: path
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      client_hidden: false
+      name: file
+      type: media
+    - admin_ui: {order: 2, width: 200}
+      client_hidden: false
+      name: file_version
+      type: string
+    server: full
+    title: Files
 metadata: {description: A school events mananger app, logo_img: 'https://media.istockphoto.com/id/538665020/photo/internet-meme-why-you-no-rage-face-3d-illustration.jpg?s=612x612&w=0&k=20&c=5D_g8Jy8kqg5Op2bb4RvcH8_6y0HGPqt29TKDrEqLyM=', title: SEM}
 name: SchoolEventsMananger
 package_name: SchoolEventsMananger
@@ -11,5 +29,8 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
+- client_config: {}
+  server_config: {file_table: files}
+  source: /runtime/services/anvil/files.yml
 startup: {module: MainPage, type: form}
 startup_form: null
