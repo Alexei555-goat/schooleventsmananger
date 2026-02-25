@@ -1,10 +1,15 @@
 allow_embedding: false
-name: Material Design 1
-package_name: Material_Design_1
+metadata: {description: A school events mananger app, logo_img: 'https://media.istockphoto.com/id/538665020/photo/internet-meme-why-you-no-rage-face-3d-illustration.jpg?s=612x612&w=0&k=20&c=5D_g8Jy8kqg5Op2bb4RvcH8_6y0HGPqt29TKDrEqLyM=', title: SEM}
+name: SchoolEventsMananger
+package_name: SchoolEventsMananger
 runtime_options:
   client_version: '3'
   legacy_features: {bootstrap3: true, class_names: true}
   server_spec: {base: python310-minimal}
   version: 3
-services: []
-startup_form: Form1
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+startup: {module: MainPage, type: form}
+startup_form: null
