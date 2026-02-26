@@ -7,10 +7,10 @@ components:
   name: label_1
   properties: {align: center, bold: true, font: '', font_size: 30, text: Welcome to School Events Mananger!, underline: false}
   type: Label
-- layout_properties: {grid_position: 'NNFGSX,PKKMGH'}
-  name: repeating_panel_1
-  properties: {item_template: MainPage.EventTemplate}
-  type: RepeatingPanel
+- layout_properties: {grid_position: 'YMRUUC,ABHXQW'}
+  name: events_list_1
+  properties: {}
+  type: form:EventsList
 - components:
   - layout_properties: {col_xs: 2, row: VDFRGA, width_xs: 4}
     name: button_1
