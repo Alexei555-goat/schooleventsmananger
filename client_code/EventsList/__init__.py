@@ -16,13 +16,13 @@ class EventsList(EventsListTemplate):
         events.title,
         events.date,
         events.location,
+        users.name
       FROM events
       LEFT JOIN users ON users.user_id == events.created_by
     """
     returnValue = anvil.server.call('query_database', query)
     data = []
     for v in returnValue:
-      print(v)
-      data.append({'title': v[1], 'location': v[3]})
+      data.append({'title': v[0], 'location': v[1], 'date': v[2], 'user': v[3]})
 
     self.events_panel.items = data

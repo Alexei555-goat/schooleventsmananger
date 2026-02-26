@@ -6,7 +6,9 @@ components:
     name: title
     properties: {text: Event title}
     type: Label
-  - layout_properties: {col_xs: 3, row: QYPOOD, width_xs: 2}
+  - data_bindings:
+    - {code: 'self.item[''date'']', property: text, writeback: false}
+    layout_properties: {col_xs: 3, row: QYPOOD, width_xs: 2}
     name: date
     properties: {text: Date}
     type: Label
@@ -16,7 +18,9 @@ components:
     name: location
     properties: {text: Location}
     type: Label
-  - layout_properties: {col_xs: 9, row: QYPOOD, width_xs: 2}
+  - data_bindings:
+    - {code: 'self.item[''user'']', property: text, writeback: false}
+    layout_properties: {col_xs: 9, row: QYPOOD, width_xs: 2}
     name: created_by
     properties: {text: created_by}
     type: Label
