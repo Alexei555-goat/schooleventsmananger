@@ -4,7 +4,7 @@ components:
   properties: {align: center, bold: true, font_size: 22, text: Events}
   type: Label
 - layout_properties: {grid_position: 'EFKPVL,BNGUOL'}
-  name: repeating_panel_1
+  name: events_panel
   properties: {item_template: EventsList.EventTemplate}
   type: RepeatingPanel
 container: {type: ColumnPanel}
