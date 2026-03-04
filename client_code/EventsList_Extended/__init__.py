@@ -17,14 +17,28 @@ class EventsList_Extended(EventsList_ExtendedTemplate):
         events.title,
         events.date,
         events.location,
-        users.name
+        users.name,
+        categories.name
       FROM events
       LEFT JOIN users ON users.user_id == events.created_by
+      LEFT JOIN categories ON categories.category_id == events.category_id
       ORDER BY events.date
     """
     returnValue = anvil.server.call("query_database", query)
     data = []
     for v in returnValue:
-      data.append({"title": v[0], "location": v[1], "date": v[2], "user": v[3]})
+      data.append(
+        {
+          "title": v[0], 
+          "date": v[1], 
+          "location": v[2], 
+          "created_by": v[3],
+          "category": v[4]
+        })
 
-    self.events_panel.items = data
+    self.repeating_panel_events.items = data
+
+  @handle("button_1", "click")
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('MainPage')

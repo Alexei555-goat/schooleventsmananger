@@ -12,7 +12,8 @@ components:
   properties: {}
   type: form:EventsList
 - components:
-  - layout_properties: {col_xs: 2, row: VDFRGA, width_xs: 4}
+  - event_bindings: {}
+    layout_properties: {col_xs: 2, row: VDFRGA, width_xs: 4}
     name: button_1
     properties: {text: ADD EVENT}
     type: Button

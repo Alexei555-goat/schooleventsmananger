@@ -1,23 +1,21 @@
 components:
 - layout_properties: {grid_position: 'LWPCMO,UHCVTN'}
   name: label_1
-  properties: {align: center, bold: true, font_size: 22, text: Events}
+  properties: {align: center, bold: true, font_size: 22, text: Events, underline: false}
   type: Label
 - components:
-  - name: repeating_panel_1
+  - name: repeating_panel_events
     properties: {item_template: EventsList_Extended.RowTemplate2}
     type: RepeatingPanel
   layout_properties: {grid_position: 'TWRQSZ,WFDOCS'}
-  name: data_grid_1
+  name: data_grid_events
   properties:
     columns:
-    - {data_key: column_1, id: JKSDUP, title: Column 1}
-    - {data_key: column_2, id: VJQQOR, title: Column 2}
-    - {data_key: column_3, id: OJLQEN, title: Column 3}
+    - {data_key: title, id: JKSDUP, title: Title}
+    - {data_key: date, id: VJQQOR, title: Date}
+    - {data_key: location, id: OJLQEN, title: Lcoation}
+    - {data_key: created_by, id: RALCZY, title: Created by}
+    - {data_key: category, id: ACZFJM, title: Category}
   type: DataGrid
-- layout_properties: {grid_position: 'EFKPVL,BNGUOL'}
-  name: events_panel
-  properties: {item_template: EventsList.EventTemplate}
-  type: RepeatingPanel
 container: {type: ColumnPanel}
 is_package: true

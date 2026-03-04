@@ -3,7 +3,7 @@ components:
   name: header_1
   properties: {}
   type: form:Header
-- layout_properties: {grid_position: 'MMTNFQ,NTTSSZ'}
+- layout_properties: {grid_position: 'FSSRYA,VLEBXW'}
   name: events_list_extended_1
   properties: {}
   type: form:EventsList_Extended

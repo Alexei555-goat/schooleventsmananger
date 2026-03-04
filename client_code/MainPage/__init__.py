@@ -18,9 +18,13 @@ class MainPage(MainPageTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('EventsPage')
-    return
+    
+
+  @handle("button_1", "click")
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
     user = backend.call('get_logged_user')
     if user:
-       alert('Yes')
+      open_form('AddEventPage')
     else:
       alert('Please log in')
