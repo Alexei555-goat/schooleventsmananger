@@ -1,26 +1,19 @@
-from ._anvil_designer import MainPageTemplate
+from ._anvil_designer import EventsPageTemplate
 from anvil import *
-import anvil.server as backend
+import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class MainPage(MainPageTemplate):
-  
+class EventsPage(EventsPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
 
-  @handle("button_2", "click")
-  def button_2_click(self, **event_args):
+  @handle("btn_close", "click")
+  def btn_close_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('EventsPage')
-    return
-    user = backend.call('get_logged_user')
-    if user:
-       alert('Yes')
-    else:
-      alert('Please log in')
+    open_form('MainPage')

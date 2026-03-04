@@ -17,10 +17,7 @@ def query_database(query: str):
 def login_user(nickname, password):
   with sqlite3.connect(data_files["schoolevents.db"]) as conn:
     cur = conn.cursor()
-    result = cur.execute(
-      "SELECT nickname FROM users WHERE name=? AND password=?",
-      (nickname, password)
-    ).fetchone()
+    result = cur.execute("SELECT name FROM users WHERE name=? AND password=?", (nickname, password) ).fetchone()
 
   if result:
     # Store user in session
@@ -36,3 +33,23 @@ def get_logged_user():
 @anvil.server.callable
 def logout_user():
   anvil.server.session["user"] = None
+
+@anvil.server.callable
+def register_user(nickname, password, email, role):
+  with sqlite3.connect(data_files["schoolevents.db"]) as conn:
+    cur = conn.cursor()
+
+    # Check if user exists
+    existing = cur.execute( "SELECT name FROM users WHERE name=?", (nickname,)).fetchone()
+
+    if existing:
+      return "exists"
+
+    # Insert new user
+    cur.execute("INSERT INTO users (name, password, email, role) VALUES (?, ?, ?, ?)", (nickname, password, email, role))
+    
+    conn.commit()
+
+    login_user(nickname, password)
+
+  return "ok"

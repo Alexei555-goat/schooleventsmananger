@@ -1,0 +1,16 @@
+components:
+- layout_properties: {grid_position: 'MVDUUY,NJCXAF'}
+  name: header_1
+  properties: {}
+  type: form:Header
+- layout_properties: {grid_position: 'MMTNFQ,NTTSSZ'}
+  name: events_list_extended_1
+  properties: {}
+  type: form:EventsList_Extended
+- event_bindings: {}
+  layout_properties: {grid_position: 'WXVXCK,XQUTNB'}
+  name: btn_close
+  properties: {text: BACK}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true

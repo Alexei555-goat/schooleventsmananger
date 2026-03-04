@@ -1,0 +1,62 @@
+components:
+- layout_properties: {grid_position: 'LRYQKZ,RMQLYV'}
+  name: label_1
+  properties: {align: center, bold: false, font_size: 44, text: REGISTER}
+  type: Label
+- layout_properties: {grid_position: 'OVQTGR,PRILOM TUMXZD,BASLFA'}
+  name: label_2
+  properties: {align: left, text: 'Username:'}
+  type: Label
+- layout_properties: {grid_position: 'OVQTGR,PRILOM GYGMCU,GDWNOP'}
+  name: label_5
+  properties: {align: left, text: 'Email:'}
+  type: Label
+- layout_properties: {grid_position: 'OVQTGR,PRILOM PCDEST,ZVRXPA'}
+  name: label_3
+  properties: {align: left, text: Password}
+  type: Label
+- layout_properties: {grid_position: 'OVQTGR,PRILOM YYIUYU,SYMSVT'}
+  name: label_4
+  properties: {align: left, text: 'Confirm password:'}
+  type: Label
+- layout_properties: {grid_position: 'OVQTGR,PRILOM ZFUUVV,YGCNZX'}
+  name: label_6
+  properties: {align: left, text: 'Role:'}
+  type: Label
+- event_bindings: {}
+  layout_properties: {grid_position: 'OVQTGR,PRILOM SGUPCW,XJVPFT'}
+  name: btn_close
+  properties:
+    spacing:
+      margin: [27, null, null, null]
+      padding: [8, null, null, null]
+    text: Back
+  type: Button
+- layout_properties: {grid_position: 'OVQTGR,RLURBV UOCLCP,TGNUJZ'}
+  name: txt_nickname
+  properties: {text: ''}
+  type: TextBox
+- layout_properties: {grid_position: 'OVQTGR,RLURBV DUSIHO,YFJGAR'}
+  name: txt_email
+  properties: {text: ''}
+  type: TextBox
+- layout_properties: {grid_position: 'OVQTGR,RLURBV HTIZIG,KIYILD'}
+  name: txt_password
+  properties: {text: ''}
+  type: TextBox
+- layout_properties: {grid_position: 'OVQTGR,RLURBV HPCFZK,WKZWKY'}
+  name: txt_confirm
+  properties: {text: ''}
+  type: TextBox
+- layout_properties: {grid_position: 'OVQTGR,RLURBV UORYMZ,RVSBXN'}
+  name: drop_down_role
+  properties:
+    items: [student, teacher]
+  type: DropDown
+- event_bindings: {}
+  layout_properties: {grid_position: 'OVQTGR,RLURBV KLXMFY,DIXSQK'}
+  name: btn_loggin
+  properties: {text: Register}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true

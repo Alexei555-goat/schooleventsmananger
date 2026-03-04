@@ -1,0 +1,33 @@
+components:
+- layout_properties: {grid_position: 'EOPJFJ,SEPYLB'}
+  name: label_2
+  properties: {align: center, font_size: 44, text: LOGIN}
+  type: Label
+- layout_properties: {grid_position: 'MGEASV,WYPQXC'}
+  name: label_1
+  properties: {align: left, text: 'Username:'}
+  type: Label
+- layout_properties: {grid_position: 'MGEASV,WYPQXC IUFCDA,AGPCLJ'}
+  name: label_3
+  properties: {align: left, text: Password}
+  type: Label
+- layout_properties: {grid_position: 'MGEASV,LOKHDV HDXQWI,PDIKRR'}
+  name: txt_nickname
+  properties: {text: username}
+  type: TextBox
+- layout_properties: {grid_position: 'MGEASV,LOKHDV VQRPHD,SPAEXH'}
+  name: txt_password
+  properties: {text: password}
+  type: TextBox
+- event_bindings: {}
+  layout_properties: {grid_position: 'IIIBWX,SDZFNC'}
+  name: btn_close
+  properties: {text: Back}
+  type: Button
+- event_bindings: {}
+  layout_properties: {grid_position: 'IIIBWX,ZFOTKE'}
+  name: btn_loggin
+  properties: {text: LOGIN}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true

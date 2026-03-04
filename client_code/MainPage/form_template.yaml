@@ -16,7 +16,8 @@ components:
     name: button_1
     properties: {text: ADD EVENT}
     type: Button
-  - layout_properties: {col_xs: 6, row: VDFRGA, width_xs: 4}
+  - event_bindings: {}
+    layout_properties: {col_xs: 6, row: VDFRGA, width_xs: 4}
     name: button_2
     properties: {text: VIEW ALL}
     type: Button

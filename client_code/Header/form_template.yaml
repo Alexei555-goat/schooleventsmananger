@@ -1,28 +1,40 @@
 components:
 - components:
-  - layout_properties: {col_xs: 0, row: ZWHBCE, width_xs: 4}
-    name: label_2
-    properties: {bold: true, font_size: 17, text: School Events Mananger}
+  - components:
+    - layout_properties: {col_xs: 0, row: ZWHBCE, width_xs: 4}
+      name: label_2
+      properties: {bold: true, font_size: 17, text: School Events Mananger}
+      type: Label
+    - event_bindings: {}
+      layout_properties: {col_xs: 6, row: ZWHBCE, width_xs: 3}
+      name: btn_register
+      properties: {text: Register}
+      type: Button
+    - event_bindings: {}
+      layout_properties: {col_xs: 8, row: ZWHBCE, width_xs: 3}
+      name: btn_login
+      properties: {text: LOGIN}
+      type: Button
+    layout_properties: {col_xs: 0, row: VHOOUP, width_xs: 9}
+    name: grid_panel_2
+    properties:
+      spacing:
+        margin: [null, 0, null, null]
+    type: GridPanel
+  - data_bindings: []
+    layout_properties: {col_xs: 9, row: VHOOUP, width_xs: 3}
+    name: label_user
+    properties:
+      spacing:
+        margin: [null, null, null, 82]
+        padding: [null, 0, null, null]
+      text: User
     type: Label
-  - layout_properties: {col_xs: 6, row: ZWHBCE, width_xs: 3}
-    name: btn_register
-    properties: {text: Register}
-    type: Button
-  - layout_properties: {col_xs: 8, row: ZWHBCE, width_xs: 3}
-    name: btn_login
-    properties: {text: LOGIN}
-    type: Button
-  layout_properties: {grid_position: 'TAOQGM,VYQJNL'}
-  name: grid_panel_2
+  layout_properties: {grid_position: 'GYJRZA,LHVIGC'}
+  name: grid_panel_1
   properties: {}
   type: GridPanel
-- data_bindings: []
-  layout_properties: {grid_position: 'TAOQGM,NBQIZC'}
-  name: label_user
-  properties:
-    spacing:
-      margin: [null, null, null, 0]
-    text: User
-  type: Label
-container: {type: ColumnPanel}
+container:
+  properties: {background: 'theme:Gray 200'}
+  type: ColumnPanel
 is_package: true
