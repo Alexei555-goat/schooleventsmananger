@@ -16,6 +16,7 @@ components:
     - {data_key: location, id: OJLQEN, title: Lcoation}
     - {data_key: created_by, id: RALCZY, title: Created by}
     - {data_key: category, id: ACZFJM, title: Category}
+    - {data_key: column_1, id: CRJWWL, title: More info}
   type: DataGrid
 container: {type: ColumnPanel}
 is_package: true
