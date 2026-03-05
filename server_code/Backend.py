@@ -14,6 +14,16 @@ def query_database(query: str):
   return result
 
 @anvil.server.callable
+def query_event_description(title: str):
+  with sqlite3.connect(data_files["schoolevents.db"]) as conn:
+    cur = conn.cursor()
+    result = cur.execute("""
+    SELECT description FROM events
+    WHERE title=?
+    """, (title,)).fetchall()
+  return result
+
+@anvil.server.callable
 def login_user(nickname, password):
   with sqlite3.connect(data_files["schoolevents.db"]) as conn:
     cur = conn.cursor()

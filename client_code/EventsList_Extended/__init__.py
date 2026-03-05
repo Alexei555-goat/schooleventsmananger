@@ -38,7 +38,7 @@ class EventsList_Extended(EventsList_ExtendedTemplate):
 
     self.repeating_panel_events.items = data
 
-  @handle("button_1", "click")
-  def button_1_click(self, **event_args):
+  @handle("btn_back", "click")
+  def btn_back_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('MainPage')

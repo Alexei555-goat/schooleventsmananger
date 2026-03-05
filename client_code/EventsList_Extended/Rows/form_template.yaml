@@ -1,0 +1,13 @@
+components:
+- event_bindings: {}
+  layout_properties: {column: CRJWWL}
+  name: btn_info
+  properties:
+    font_size: 24
+    spacing:
+      margin: [0, null, 0, null]
+      padding: [0, null, 0, null]
+    text: ☰
+  type: Button
+container: {type: DataRowPanel}
+is_package: true

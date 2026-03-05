@@ -5,7 +5,7 @@ components:
   type: Label
 - components:
   - name: repeating_panel_events
-    properties: {item_template: EventsList_Extended.RowTemplate2}
+    properties: {item_template: EventsList_Extended.Rows}
     type: RepeatingPanel
   layout_properties: {grid_position: 'TWRQSZ,WFDOCS'}
   name: data_grid_events

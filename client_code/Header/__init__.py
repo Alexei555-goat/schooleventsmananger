@@ -12,7 +12,7 @@ class Header(HeaderTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    anvil.server.call("login_user", 'Ben Schmidt', '1234')
+    #anvil.server.call("login_user", 'Ben Schmidt', '1234')
     self.refresh_auth_ui()
 
   def refresh_auth_ui(self):
