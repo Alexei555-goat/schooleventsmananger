@@ -12,3 +12,8 @@ class AddEventPage(AddEventPageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  @handle("b_cancel", "click")
+  def b_cancel_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('MainPage')
