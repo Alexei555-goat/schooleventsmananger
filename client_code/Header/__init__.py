@@ -8,24 +8,25 @@ from anvil.tables import app_tables
 
 class Header(HeaderTemplate):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
     anvil.server.call("login_user", 'Ben Schmidt', '1234')
     self.refresh_auth_ui()
 
+
   def refresh_auth_ui(self):
     user = anvil.server.call("get_logged_user")
-
+  
     if user:
-      self.label_user.text = f"Hello, {user}"
+      self.label_user.text = f"Hello, {user['name']}"
       self.btn_login.visible = False
       self.btn_register.visible = False
+      #self.btn_profile.visible = True
     else:
       self.label_user.text = ""
       self.btn_login.visible = True
       self.btn_register.visible = True
+      #self.btn_profile.visible = False
 
   @handle("btn_login", "click")
   def btn_login_click(self, **event_args):

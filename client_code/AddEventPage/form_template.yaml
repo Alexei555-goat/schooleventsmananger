@@ -48,5 +48,10 @@ components:
   name: b_cancel
   properties: {text: Cancel}
   type: Button
+- event_bindings: {}
+  layout_properties: {grid_position: 'LMPMGY,HALPSA'}
+  name: b_add
+  properties: {text: ADD}
+  type: Button
 container: {type: ColumnPanel}
 is_package: true
