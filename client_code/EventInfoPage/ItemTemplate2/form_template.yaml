@@ -1,0 +1,11 @@
+components:
+- layout_properties: {grid_position: 'GTEINW,RHOVDS'}
+  name: l_user
+  properties: {bold: true}
+  type: Label
+- layout_properties: {grid_position: 'GTEINW,FSMKRO'}
+  name: l_comment
+  properties: {text: comment}
+  type: Label
+container: {type: ColumnPanel}
+is_package: true

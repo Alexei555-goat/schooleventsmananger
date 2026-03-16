@@ -105,13 +105,72 @@ def add_event(title, description, location, date, category_id):
     conn.commit()
 
 @anvil.server.callable
-def delete_event(title):
+def delete_event(event_id):
+  with sqlite3.connect(data_files["schoolevents.db"]) as conn:
+    cur = conn.cursor()
+    cur.execute("DELETE FROM events WHERE event_id = ?", (event_id,))
+    conn.commit()
+
+@anvil.server.callable
+def events_per_month():
+  with sqlite3.connect(data_files["schoolevents.db"]) as conn:
+    cur = conn.cursor()
+
+    result = cur.execute("""
+      SELECT strftime('%m', date) as month, COUNT(*)
+      FROM events
+      GROUP BY month
+      ORDER BY month
+    """).fetchall()
+
+  return result
+
+@anvil.server.callable
+def events_per_category():
+  with sqlite3.connect(data_files["schoolevents.db"]) as conn:
+    cur = conn.cursor()
+
+    result = cur.execute("""
+      SELECT categories.name, COUNT(events.event_id)
+      FROM events
+      JOIN categories
+      ON events.category_id = categories.category_id
+      GROUP BY categories.name
+    """).fetchall()
+
+  return result
+
+@anvil.server.callable
+def add_comment(event_id, text):
+
+  user = anvil.server.session.get("user")
+
+  if not user:
+    raise Exception("User not logged in")
+
   with sqlite3.connect(data_files["schoolevents.db"]) as conn:
     cur = conn.cursor()
 
     cur.execute("""
-      DELETE FROM events
-      WHERE title = ?
-    """, (title,))
+      INSERT INTO comments (event_id, user_id, text)
+      VALUES (?, ?, ?)
+    """, (event_id, user["id"], text))
 
     conn.commit()
+
+@anvil.server.callable
+def get_comments(event_id):
+
+  with sqlite3.connect(data_files["schoolevents.db"]) as conn:
+    cur = conn.cursor()
+
+    result = cur.execute("""
+      SELECT users.name, comments.text
+      FROM comments
+      JOIN users
+      ON comments.user_id = users.user_id
+      WHERE comments.event_id = ?
+      ORDER BY comments.comment_id DESC
+    """, (event_id,)).fetchall()
+
+  return result

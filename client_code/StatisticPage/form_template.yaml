@@ -1,0 +1,26 @@
+components:
+- layout_properties: {grid_position: 'MUUAUG,AGYEOE'}
+  name: label_1
+  properties: {align: center, bold: true, font_size: 25, text: EVENTS}
+  type: Label
+- event_bindings: {}
+  layout_properties: {grid_position: 'XSZXAN,OYWLGL'}
+  name: b_month
+  properties: {text: PER MONTH}
+  type: Button
+- event_bindings: {}
+  layout_properties: {grid_position: 'XSZXAN,UCCEWO'}
+  name: b_category
+  properties: {text: PER CATEGOTY}
+  type: Button
+- layout_properties: {grid_position: 'JXFJUW,HOFYPX'}
+  name: p_stats
+  properties: {}
+  type: Plot
+- event_bindings: {}
+  layout_properties: {grid_position: 'BUVSRD,NOVMFL'}
+  name: b_cancel
+  properties: {text: CANCEL}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true

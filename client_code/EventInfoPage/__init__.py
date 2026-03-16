@@ -8,21 +8,29 @@ from anvil.tables import app_tables
 
 class EventInfoPage(EventInfoPageTemplate):
 
-  title = ""
+  id = ""
   
   def __init__(self, input, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.title = input['title']
-    description = backend.call("query_event_description", self.title)[0][0]
+    title = input['title']
+    description = backend.call("query_event_description", title)[0][0]
     date = input['date']
     location = input['location']
     created_by = input['created_by']
     category = input['category']
+    self.id = input['id']
     
-    self.label_title.text = f"{self.title} {description} {date} {location} {created_by} {category}"
+    self.label_title.text = f"{title} {description} {date} {location} {created_by} {category} {self.id}"
+
+    self.load_comments()
+
+  def load_comments(self):
+
+    comments = backend.call("get_comments", self.id)
+    self.rp_comments.items = comments
     
 
   @handle("btn_back", "click")
@@ -34,9 +42,35 @@ class EventInfoPage(EventInfoPageTemplate):
   def b_delete_click(self, **event_args):
     """This method is called when the button is clicked"""
 
-    if self.title != "":
-      backend.call("delete_event", self.title)
+    user = backend.call('get_logged_user')
+    if user:
+      if self.id:
+        backend.call("delete_event", self.id)
+
+        alert("Event was deleted!")
+
+        open_form("MainPage")
+    else:
+      alert('Please log in')
+    
+   
+
+  @handle("b_post", "click")
+  def b_post_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    text = self.tb_comment.text
+    user = backend.call('get_logged_user')
+
+    if not text:
+      alert("Please write a comment")
+      return
+
+    if not user:
+      aler("Please log in")
+      return
   
-    alert("Event deleted!")
+    backend.call("add_comment", self.id, text)
   
-    open_form("MainPage")
+    self.tb_comment.text = ""
+  
+    self.load_comments()

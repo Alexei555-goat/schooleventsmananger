@@ -5,6 +5,7 @@ unique_ids:
   forms:
     AddEventPage: '1772620853556476671736529.969'
     EventInfoPage: '1772708747184693738744378.5371'
+    EventInfoPage.ItemTemplate2: '1773683970196685839238997.0107'
     EventsList: '1772103758045292792409325.9075'
     EventsList.EventTemplate: '177210376899212451302431.35284'
     EventsList.EventTemplate.RowTemplate1: '1772103836262325966900284.202'
@@ -17,6 +18,7 @@ unique_ids:
     MainPage: '1772013114244807481093978.7709'
     MainPage.EventTemplate: '1772014283540311591998935.6862'
     RegisterPage: '177261735683049824580813.95169'
+    StatisticPage: '1773682231736195986707147.6601'
   modules: {}
   scripts: {}
   server_modules:

@@ -18,7 +18,8 @@ class EventsList_Extended(EventsList_ExtendedTemplate):
         events.date,
         events.location,
         users.name,
-        categories.name
+        categories.name,
+        events.event_id
       FROM events
       LEFT JOIN users ON users.user_id == events.created_by
       LEFT JOIN categories ON categories.category_id == events.category_id
@@ -33,7 +34,8 @@ class EventsList_Extended(EventsList_ExtendedTemplate):
           "date": v[1], 
           "location": v[2], 
           "created_by": v[3],
-          "category": v[4]
+          "category": v[4],
+          "id": v[5]
         })
 
     self.repeating_panel_events.items = data
