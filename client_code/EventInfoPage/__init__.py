@@ -23,7 +23,8 @@ class EventInfoPage(EventInfoPageTemplate):
     category = input['category']
     self.id = input['id']
     
-    self.label_title.text = f"{title} {description} {date} {location} {created_by} {category} {self.id}"
+    self.l_title.text = f"{title}"
+    self.ta_description.text = description;
 
     self.load_comments()
 

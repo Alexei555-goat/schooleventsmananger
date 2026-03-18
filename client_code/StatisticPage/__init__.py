@@ -5,6 +5,7 @@ import anvil.server as backend
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import calendar
 
 
 class StatisticPage(StatisticPageTemplate):
@@ -51,7 +52,7 @@ class StatisticPage(StatisticPageTemplate):
   def show_month_plot(self):
     data = backend.call("events_per_month")
 
-    months = [x[0] for x in data]
+    months = [calendar.month_name[int(x[0])] for x in data]
     counts = [x[1] for x in data]
 
     self.p_stats.data = [{
@@ -63,5 +64,8 @@ class StatisticPage(StatisticPageTemplate):
     self.p_stats.layout = {
       "title": "Events per Month",
       "xaxis": {"title": "Month"},
-      "yaxis": {"title": "Number of Events"}
+      "yaxis": {
+        "title": "Number of Events",
+        "dtick": 1 
+      }
     }

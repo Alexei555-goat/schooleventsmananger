@@ -37,6 +37,6 @@ class AddEventPage(AddEventPageTemplate):
       category_id
     )
   
-    alert("Event wurde erfolgreich erstellt!")
+    alert("Event successfuly added!")
   
     open_form("MainPage")
