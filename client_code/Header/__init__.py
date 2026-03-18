@@ -10,7 +10,6 @@ class Header(HeaderTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
-    anvil.server.call("login_user", 'Ben Schmidt', '1234')
     self.refresh_auth_ui()
 
 
