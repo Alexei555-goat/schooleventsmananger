@@ -138,3 +138,29 @@ conn.commit()
 
 print("Sample data inserted successfully!")
 ```
+
+## Controls
+#### Header:
+- press login button to login
+- press register button to register
+
+#### Back buttons
+- All `BACK`/`CANCEL` buttons lead to last visited page
+
+#### Login/Register page
+Just fill in your personal information and precede to the next page
+
+#### Add page (must be logged in)
+Fill in event information and click `ADD` button to create event
+
+#### Events page
+Shows list of all events and is sorted from earliest to latest event. You can click `Details button` to manage or view details of event.
+
+#### Event info page
+Shows entire information about specific event. With `DELETE` button you can delete event (must be logged in).
+
+#### Comments (must be logged in)
+Just click `POST` to post your comment.
+
+#### Statistics 
+Shows two statistics about events.
