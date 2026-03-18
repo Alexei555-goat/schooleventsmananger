@@ -24,7 +24,11 @@ class EventInfoPage(EventInfoPageTemplate):
     self.id = input['id']
     
     self.l_title.text = f"{title}"
-    self.ta_description.text = description;
+    self.ta_description.text = description
+    self.l_category.text = category
+    self.l_date.text = date
+    self.l_location.text = location
+    self.l_organizer.text = created_by
 
     self.load_comments()
 
@@ -38,24 +42,7 @@ class EventInfoPage(EventInfoPageTemplate):
   def btn_back_click(self, **event_args):
     open_form('EventsPage')
     pass
-
-  @handle("b_delete", "click")
-  def b_delete_click(self, **event_args):
-    """This method is called when the button is clicked"""
-
-    user = backend.call('get_logged_user')
-    if user:
-      if self.id:
-        backend.call("delete_event", self.id)
-
-        alert("Event was deleted!")
-
-        open_form("MainPage")
-    else:
-      alert('Please log in')
     
-   
-
   @handle("b_post", "click")
   def b_post_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -67,7 +54,7 @@ class EventInfoPage(EventInfoPageTemplate):
       return
 
     if not user:
-      aler("Please log in")
+      alert("Please log in")
       return
   
     backend.call("add_comment", self.id, text)
@@ -75,3 +62,15 @@ class EventInfoPage(EventInfoPageTemplate):
     self.tb_comment.text = ""
   
     self.load_comments()
+
+  def d_delete_click(self, **event_args):
+    user = backend.call('get_logged_user')
+    if user:
+      if self.id:
+        backend.call("delete_event", self.id)
+
+        alert("Event was deleted!")
+
+        open_form("MainPage")
+    else:
+      alert('Please log in')

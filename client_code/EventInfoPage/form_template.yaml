@@ -3,23 +3,55 @@ components:
   name: l_title
   properties: {align: center, bold: true, font_size: 23, text: Title}
   type: Label
-- layout_properties: {grid_position: 'ZHHPPC,KDXIHW'}
-  name: ta_description
-  properties: {enabled: false, text: Description}
-  type: TextArea
+- components:
+  - layout_properties: {grid_position: 'ABEVAV,KIMJVL'}
+    name: ta_description
+    properties: {enabled: false, height: 122.70367431640625, text: Description}
+    type: TextArea
+  - layout_properties: {grid_position: 'ABEVAV,BXHRJZ QYHLRD,XHOLXG'}
+    name: l_location
+    properties: {text: location}
+    type: Label
+  - layout_properties: {grid_position: 'ABEVAV,BXHRJZ DYPJEG,UQCHNI'}
+    name: l_date
+    properties: {align: left, text: date}
+    type: Label
+  - layout_properties: {grid_position: 'ABEVAV,BXHRJZ GOIRLA,EAQYGH'}
+    name: l_category
+    properties: {text: category}
+    type: Label
+  - layout_properties: {grid_position: 'JUMBVG,FYSVMF'}
+    name: label_1
+    properties: {text: 'Organizer:'}
+    type: Label
+  - layout_properties: {grid_position: 'JUMBVG,WSYFMD'}
+    name: l_organizer
+    properties: {align: left, text: phillip}
+    type: Label
+  layout_properties: {grid_position: 'VNMJRM,AREARU'}
+  name: card_1
+  properties: {role: card}
+  type: ColumnPanel
 - layout_properties: {grid_position: 'ROZTJA,ESHSXR'}
   name: label_3
   properties:
+    bold: true
+    font_size: 15
     spacing:
       margin: [62, null, null, null]
     text: 'Comments:'
   type: Label
-- layout_properties: {grid_position: 'ACAJXR,ZKBQKH'}
-  name: rp_comments
-  properties:
-    item_template: EventInfoPage.ItemTemplate2
-    margin: [43, null, 0, null]
-  type: RepeatingPanel
+- components:
+  - layout_properties: {grid_position: 'JRCSVY,ZCLNFI'}
+    name: rp_comments
+    properties:
+      item_template: EventInfoPage.ItemTemplate2
+      margin: [0, null, 0, null]
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'TCXBYX,BZMDOG'}
+  name: card_2
+  properties: {role: card}
+  type: ColumnPanel
 - layout_properties: {grid_position: 'FMYEZR,MDYHPR'}
   name: tb_comment
   properties:
@@ -31,15 +63,22 @@ components:
   name: b_post
   properties: {text: POST}
   type: Button
-- event_bindings: {}
-  layout_properties: {grid_position: 'ZYKEXB,TLYNIB'}
-  name: btn_back
-  properties: {text: BACK}
-  type: Button
-- event_bindings: {}
-  layout_properties: {grid_position: 'ZYKEXB,MBCAPK'}
-  name: b_delete
-  properties: {text: DELETE}
-  type: Button
-container: {type: ColumnPanel}
+- components:
+  - event_bindings: {}
+    layout_properties: {grid_position: 'KZWRZY,QKGHXS'}
+    name: btn_back
+    properties: {text: BACK}
+    type: Button
+  - event_bindings: {click: d_delete_click}
+    layout_properties: {grid_position: 'KZWRZY,LDXEUW'}
+    name: b_delete
+    properties: {background: '#ff8080', border: '', role: primary-color, text: DELETE}
+    type: Button
+  layout_properties: {grid_position: 'ZEDWEQ,MUJGTZ'}
+  name: card_3
+  properties: {role: card}
+  type: ColumnPanel
+container:
+  properties: {col_widths: '{"MDYHPR":30,"WBAFDB":30}'}
+  type: ColumnPanel
 is_package: true

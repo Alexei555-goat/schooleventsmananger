@@ -1,41 +1,55 @@
 components:
 - components:
-  - layout_properties: {}
-    name: label_2
-    properties:
-      bold: true
-      font_size: 17
-      spacing:
-        margin: [null, null, 0, 14]
-      text: School Events Mananger
-    type: Label
-  - event_bindings: {}
-    layout_properties: {}
-    name: btn_register
-    properties:
-      spacing:
-        margin: [null, null, null, 314]
-      text: Register
-    type: Button
-  - event_bindings: {}
-    layout_properties: {}
-    name: btn_login
-    properties: {text: LOGIN}
-    type: Button
-  - data_bindings: []
-    layout_properties: {}
-    name: label_user
-    properties:
-      spacing:
-        margin: [null, null, null, 82]
-        padding: [null, 0, null, null]
-      text: User
-    type: Label
-  layout_properties: {grid_position: 'LFJQUC,WOBKYY'}
-  name: flow_panel_1
-  properties: {}
-  type: FlowPanel
+  - components:
+    - layout_properties: {}
+      name: label_2
+      properties:
+        bold: true
+        font_size: 17
+        spacing:
+          margin: [null, null, 0, 14]
+        text: School Events Mananger
+      type: Label
+    layout_properties: {grid_position: 'QKUBBP,BYTQJV'}
+    name: flow_panel_1
+    properties: {}
+    type: FlowPanel
+  layout_properties: {grid_position: 'LFJQUC,NXBCPG'}
+  name: card_1
+  properties:
+    role: card
+    spacing:
+      margin: [null, null, null, 12]
+  type: ColumnPanel
+- event_bindings: {}
+  layout_properties: {grid_position: 'LFJQUC,BLOBWC'}
+  name: btn_login
+  properties:
+    align: center
+    spacing:
+      margin: [14, null, null, null]
+    text: LOGIN
+  type: Button
+- event_bindings: {}
+  layout_properties: {grid_position: 'LFJQUC,DMGCUB'}
+  name: btn_register
+  properties:
+    align: center
+    spacing:
+      margin: [14, null, '4', '0']
+    text: Register
+  type: Button
+- data_bindings: []
+  layout_properties: {grid_position: 'LFJQUC,YCPBWE'}
+  name: label_user
+  properties:
+    align: center
+    spacing:
+      margin: [14, null, null, '0']
+      padding: [null, 0, null, null]
+    text: User
+  type: Label
 container:
-  properties: {background: 'theme:Gray 200'}
+  properties: {background: 'theme:Gray 200', col_widths: '{"DMGCUB":8,"YCPBWE":17,"NXBCPG":20,"BLOBWC":15}'}
   type: ColumnPanel
 is_package: true
